@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 
-class JudgeQnaHandler:
+class LlmJudge:
     """
-    A JudgeQnaHandler object represents a Flask endpoint to retrieve the answer to a question using the
+    A LlmJudge object represents a Flask endpoint to retrieve the answer to a question using the
     specified bot function. The endpoint is created programmatically using the create_testing_rag_endpoint method.
 
     Attributes:
@@ -11,7 +11,7 @@ class JudgeQnaHandler:
 
     def __init__(self, history_accepted:bool = False, route:str = '/get_rag_response'):
         """
-        Initializes a JudgeQnaHandler object.
+        Initializes a LlmJudge object.
 
         Parameters:
         - route: The URL route (string) to the endpoint.
@@ -20,7 +20,7 @@ class JudgeQnaHandler:
         self.history_accepted = history_accepted
 
     def __str__(self):
-        return f"JudgeQnaHandler(route={self.route})"
+        return f"LlmJudge(route={self.route})"
     
     def create_rag_response_endpoint(self, app, get_query_response, methods=["POST"]):
         """
@@ -234,7 +234,7 @@ class JudgeQnaHandler:
                 return jsonify({"error": f"Error occured while processing the request"}), 500
         return endpoint_function
 
-# # Example usage
+# Example usage
 # if __name__ == "__main__":
 #     # app object
 #     app = Flask(__name__)
@@ -243,7 +243,9 @@ class JudgeQnaHandler:
 #     get_query_response = lambda x: x
 
 #     # Endpoint handler class
-#     handler = JudgeQnaHandler()
+#     handler = LlmJudge()
+
+#     # create endpoint
 #     handler.create_rag_response_endpoint(app, get_query_response)
     
 #     # local dev server

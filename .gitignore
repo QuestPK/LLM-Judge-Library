@@ -1,1 +1,5 @@
+# Project Specific
 .venv
+build/
+dist/
+*.egg-info

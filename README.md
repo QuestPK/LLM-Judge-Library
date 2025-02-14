@@ -1,4 +1,4 @@
-# Judge QnA Handler
+# Quest LLM Judge
 
 A Python package for handling question-answering functionality with your RAG (Retrieval-Augmented Generation) capabilities.
 
@@ -7,7 +7,7 @@ A Python package for handling question-answering functionality with your RAG (Re
 Install the package using pip:
 
 ```bash
-pip install git+https://github.com/Umer-Ishtiaq-Q/rag_ans_retreival.git
+pip install quest_llm_judge
 ```
 
 ## Quick Start
@@ -15,14 +15,14 @@ pip install git+https://github.com/Umer-Ishtiaq-Q/rag_ans_retreival.git
 Here's a simple example of how to use the package:
 
 ```python
-from judge_qna_handler.handler import JudgeQnaHandler
+from quest_llm_judge.handler import LlmJudge
 from flask import Flask
 
 # Initialize FastAPI app
 app = Flask()
 
 # Initialize the handler
-handler = JudgeQnaHandler()
+handler = LlmJudge()
 
 # Define your query response function
 def get_query_response(query: str) -> str:
@@ -41,12 +41,12 @@ handler.create_rag_response_endpoint(
 
 1. First, import the necessary components:
    ```python
-   from judge_qna_handler.handler import JudgeQnaHandler
+   from quest_llm_quest.handler import LlmJudge
    ```
 
 2. Initialize the handler instance:
    ```python
-   handler = JudgeQnaHandler()
+   handler = LlmJudge()
    ```
 
 3. Define your query response function:
@@ -66,7 +66,7 @@ handler.create_rag_response_endpoint(
 
 ## API Reference
 
-### JudgeQnaHandler
+### LlmJudge
 
 #### `create_rag_response_endpoint(app, get_query_response)`
 
@@ -84,7 +84,3 @@ def get_query_response(query: str) -> str
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-[Add your license information here]
